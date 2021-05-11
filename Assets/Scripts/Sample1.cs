@@ -20,18 +20,20 @@ public class Sample1 : MonoBehaviour
 
     private async Task<string> Work()
     {
-        return await Task.Run(() =>
+        return await Task.Run(async () =>
         {
             Debug.Log("Working Thread:" + Thread.CurrentThread.ManagedThreadId);
+            await Task.Delay(1000);
             return "Work Finish Thread:" + Thread.CurrentThread.ManagedThreadId;
         });
     }
 
     private async UniTask<string> Work2()
     {
-        return await Task.Run(() =>
+        return await Task.Run(async () =>
         {
             Debug.Log("Working UniTask Thread:" + Thread.CurrentThread.ManagedThreadId);
+            await Task.Delay(1000);
             return "Work Finish UniTask Thread:" + Thread.CurrentThread.ManagedThreadId;
         });
     }
