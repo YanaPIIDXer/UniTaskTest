@@ -7,7 +7,7 @@ using Cysharp.Threading.Tasks;
 
 public class Sample1 : MonoBehaviour
 {
-    async void Start()
+    async UniTaskVoid Start()
     {
         Debug.Log("Start Thread:" + Thread.CurrentThread.ManagedThreadId);
 
